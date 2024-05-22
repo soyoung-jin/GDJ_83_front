@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="c">
+    <input type="text" class="c">
+    <input type="text" class="c">
+    <button id = "btn" onclick="info()">click</button>
+
+    <script>
+        //동일한 input들을 가지고 오는 법
+        const btn = document.getElementById("btn");
+        const c = document.getElementsByClassName("c"); // 여러개의 elements들이므로 유사 배열 형태
+        
+        btn.value;// 가능
+        //c.value --> 불가능, 배열이여서, 그래서 하나를 꺼내줘야 함
+        
+        function info(){
+        for(let i =0; i <c.length; i++){
+            console.log(c[i].value); //여기까지가 input element를 꺼낸 것이고 값은 value까지 붙여야 함
+        }
+    }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="/images/1.jpg" id="ws">
+    </div>
+    <button onclick="change()">Next</button>
+
+    <script>
+    
+        let ar = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"];
+        const img = document.getElementById("ws");
+        let i =0;
+        ar[i];
+
+        function change(){
+            i++;
+            if(i < 5){
+                
+                img.src = "/images/" + ar[i];
+            } else {
+                alert("마지막 사진입니다.");
+                i = 0;
+            }
+        }
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
