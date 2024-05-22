@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" value = "1" name="ch" id="checkAll">
+    <input type="checkbox" value = "1" name="ch" class="c">
+    <input type="checkbox" value = "2" name="ch" class="c" > <!--checked 첫 화면부터 체크되서 나오게 함-->
+    <input type="checkbox" value = "3" name="ch" class="c">
+    <input type="checkbox" value = "4" name="ch" class="c">
+
+    <button onclick="info()">Click</button>
+
+
+    
+    <script>
+    //첫번째를 클릭하면 모두 클릭, 해제하면 모두 해제    
+        const ch = document.getElementsByClassName("c");
+        const ca = document.getElementById("checkAll");
+
+        // function info(){
+        //     for(let i =0; i < ch.length; i++){
+        //         console.log(ch[i].checked);
+        //     }
+        // }
+
+        function info(){
+            
+            
+            if(ca.checked == true){
+                for(let i=0; i< ch.length; i++){
+                    ch[i].checked = true;
+
+                }
+                
+            }
+            
+            if (ca.checked == false) {
+                for(let i=0; i< ch.length; i++){
+                    ch[i].checked = false;
+                }
+                
+             }
+    
+
+        }
+
+       
+
+        // ch[1].checked = false;
+        
+
+    </script>
+</body>
+</html>
