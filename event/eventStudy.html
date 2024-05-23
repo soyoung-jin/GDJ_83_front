@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">CLICK</button>
+    <button id="btn2">CLICK2</button>
+    <button id="btn3">CLICK2</button>
+
+    <script>
+        const btn = document.getElementById("btn");
+        const btn2 = document.getElementById("btn2");
+        const btn3 = document.getElementById("btn3");
+        btn.onclick = function(){
+            console.log("test");
+
+        }
+
+        //btn2.onclick = go();
+        //btn2.onclick = go;
+        btn2.onclick = function(){
+            go();
+        }
+
+        // btn3.addEventListener("click", fuction(){
+        //     //실제 이름은 on빼고 적어야 함
+
+        //     console.log("btn3")
+        // })
+
+
+        function go(){
+            console.log("go");
+        }
+    </script>
+</body>
+</html>

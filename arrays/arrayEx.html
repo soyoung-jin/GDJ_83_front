@@ -18,8 +18,8 @@
     
     <script>
     //첫번째를 클릭하면 모두 클릭, 해제하면 모두 해제    
-        const ch = document.getElementsByClassName("c");
-        const ca = document.getElementById("checkAll");
+        const c = document.getElementsByClassName("c");
+        const cA = document.getElementById("checkAll");
 
         // function info(){
         //     for(let i =0; i < ch.length; i++){
@@ -27,11 +27,12 @@
         //     }
         // }
 
-        function info(){
+        // function info(){
             
-                for(let i=0; i< ch.length; i++){
-                    ch[i].checked = ca.checked;
-                }
+
+                // for(let i=0; i< c.length; i++){
+                //     c[i].checked = cA.checked;
+                // }
 
             
             // if(ca.checked){ //ca.checked == true
@@ -46,13 +47,35 @@
             //     }
                 
             //  }
+
+        // }
     
+            //네개 중 하나라도 체크가 안되어 있으면 전체동의에도 체크 해제
+            //네개 다 체크되어 있으면 전체동의에도 체크되게
 
-        }
+            
+            //4개의 체크박스에 클릭이벤트 넣어줌
+           for(let i=0; i <c.length; i++){
+                c[i].addEventListener("click",function(){
+                    let flag = true;
+                    //클릭 이벤트 넣으면 flag에 true담음
+                    
+                    for(let j=0; j<c.length; j++){
+                        if(!c[j].checked){
+                            flag = false;
+                        }
+                    }
+                    cA.checked = flag;
+                })
+           }
+            
+        
 
-       
+            
 
-        // ch[1].checked = false;
+            
+
+
         
 
     </script>
