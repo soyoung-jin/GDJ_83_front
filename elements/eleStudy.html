@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="info">
+    <button id = "btn">Add</button>
+    <ul id="result">
+
+    </ul>
+
+    <div id ="result2">
+        <!-- <div>
+            <input type="file"><span>X</span>
+        </div> -->
+
+    </div>
+    <button id="btn2">ADD2</button>
+
+    <script>
+        const info = document.getElementById("info");
+        const btn = document.getElementById("btn");
+        const result = document.getElementById("result");
+
+        const btn2 = document.getElementById("btn2");
+        const result2 = document.getElementById("result");
+
+        btn2.addEventListener("click", function(){
+            let d = document.createElement("div") //<div></div> 생성
+            let i = document.createElement("input") //<input> 생성
+            let a = document.createAttribute("type");
+            a.value="file" //type="file"만듬
+            i.setAttributeNode(a); //<input type = "file">만듬
+            d.appendChild(i); //<div><input></div> 만들어짐
+            result2.append(d);
+
+            let s = document.createElement("span"); //span생성
+            let t = document.createTextNode("X");//<span>'x'</span>생성
+            s.appendChild(t);
+            d.appendChild(s);
+            result2.append(d);
+
+        })
+
+
+        btn.addEventListener("click", function(){
+            let v = info.value
+            
+            let li = document.createElement("li")//li태그에 넣어주세려 함
+            //contents node 생성
+            let c = document.createTextNode(v);
+            
+            //<li>abc</li> 가 되는 것임
+            li.appendChild(c);
+            result.append(li);
+        })
+
+
+
+
+    </script>
+
+
+</body>
+</html>

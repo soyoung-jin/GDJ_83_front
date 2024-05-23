@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            text-decoration: line-through;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id = "result">
+        <!-- <div>
+            <input type="checkbox"> 바나나
+        
+        </div> -->
+
+        <!-- <div>
+            <input type="checkbox"> 바나나
+        </div> 이거반복 -->
+    <!-- 체크박스 바나나
+        체크박스 사과 이런식으로 5개의 체크박스 만들기 -->
+
+
+    </div>
+
+
+    <script>
+        const ar = ['banana', 'apple' , 'watermelon', 'mango', 'grape']
+        const result = document.getElementById("result");
+
+        for(let j=0;j < ar.length; j++){
+            let d = document.createElement("div") //div태그 만듬
+            let i = document.createElement("input");//input
+            let t = document.createAttribute("type");
+            t.value = "checkbox"; //type="checkbox"만듬
+            i.setAttributeNode(t); //<input>다 완성
+            d.appendChild(i);//div 태그에 input 붙여줌
+            
+            let a = document.createTextNode(ar[j]); //ar은 input은 닫는 태그가 없기 때문에 div의 자식임!!
+            d.append(a);
+            
+            result.append(d);
+
+            //append 는 객체타입이나 문자열
+            //appenchild는 객체타입만 취급
+        }
+      
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
