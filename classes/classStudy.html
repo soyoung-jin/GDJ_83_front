@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+
+        .c2{
+            background-color: bisque;
+        }
+        
+        .c3{
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="c1 c2"></div>
+    <button onclick="addClass()">Click</button>
+    <!-- 클릭하면 박스 배경색을 red로 -->
+
+    <script>
+        const c1 = document.getElementsByClassName("c1")
+
+        
+        function addClass(){
+            console.log("Test");
+            console.log(c1[0].classList[1])     
+        
+            //클래스명 변경
+            //cl[0].className = "c3";
+
+            //c1[0].classList.replace("c1","c3");
+
+            c1[0].classList.toggle("c2"); //있으면 삭제, 없으면 추가
+
+            // let flag = c1[0].classList.contains("c2");
+            // console.log(flag)
+            
+        
+        }
+
+
+
+        
+
+    </script>
+</body>
+</html>

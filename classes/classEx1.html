@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .c1{
+            border: 2px solid black;
+        }
+        .c2{
+            border: 2px solid red;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class = "c1">
+    </div>
+    <div>
+        <input type="text" class = "c1">
+    </div>
+    <div>
+        <input type="text" class = "c1">
+    </div>   
+    <div>
+        <button onclick="change()">CLICK</button>
+    </div> 
+    
+
+    <script>
+        const c1 = document.getElementsByClassName("c1");
+
+        function change(){
+            for(let i = 0;i < c1.length; i++){
+                
+                if(c1[i].value ==""){
+                    c1[i].classList.add("c2");
+
+                } else {
+                    c1[i].classList.remove("c2");
+                }
+            }
+        }
+
+    
+        //버튼 클릭 시, input요소에 값이 비어 있으면 빨간색 테두리를 준다.
+        //값이 있으면 원래대로 간다.
+        //반복문 사용 비어있는지 아닌지 다 확인
+
+    </script>
+    
+
+
+</body>
+</html>
