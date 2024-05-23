@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" value = "1" name="ch" id="checkAll">
+    <input onclick="info()" type="checkbox" value = "1" name="ch" id="checkAll"> <!--여기에 into() function 붙이면 전체동의 전체해제 가능-->
     <input type="checkbox" value = "1" name="ch" class="c">
     <input type="checkbox" value = "2" name="ch" class="c" > <!--checked 첫 화면부터 체크되서 나오게 함-->
     <input type="checkbox" value = "3" name="ch" class="c">
@@ -29,19 +29,23 @@
 
         function info(){
             
-            
-            if(ca.checked == true){
                 for(let i=0; i< ch.length; i++){
-                    ch[i].checked = true;
+                    ch[i].checked = ca.checked;
+                }
 
-                }
+            
+            // if(ca.checked){ //ca.checked == true
+            //     for(let i=0; i< ch.length; i++){
+            //         ch[i].checked = true; //true는 ca.checked 라고 해도 됨.
+
+            //     }
                 
-            }else {
-                for(let i=0; i< ch.length; i++){
-                    ch[i].checked = false;
-                }
+            // }else {
+            //     for(let i=0; i< ch.length; i++){
+            //         ch[i].checked = false; //마찬가지로 false 값이 ca[i].checked에 들어가니까 ca.checked 해도 됨
+            //     }
                 
-             }
+            //  }
     
 
         }
