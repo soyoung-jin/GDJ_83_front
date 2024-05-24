@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .c1{
+            width: 200px;
+            height: 200px;
+            
+        }
+
+        .bg_red{
+            background-color: red;
+        }
+
+        .bg_blue{
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="del1" class="c1 bg_red">
+        <input type="text" >
+    </div>
+
+    <div id="del2" class="c1 bg_blue">
+        <img src="/images/2.jpg" id="result">
+    </div>
+
+    <script>
+        const del1 = document.getElementById("del1");
+        const del2 = document.getElementById("del2");
+
+        del1.addEventListener("click", function(){
+            console.log("이벤트");
+            
+            //element 삭제 - remove();
+
+            del1.remove();
+        })
+
+
+        del2.addEventListener("click", function(){
+            del2.removeChild(document.getElementById("result")) //div2 태그 내 컨텐츠 부분( input)만 지워짐
+        }) //한번 쓰고 안쓸거면 굳이 변수에 넣지 않고 바로 써도 됨
+
+    </script>
+</body>
+</html>

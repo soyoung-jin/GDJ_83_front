@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <input type="checkbox" id="cA"> <!--전체 선택-->
+        <button id="del" onclick="btn()">DELETE</button> <!--체크하면 전체 체크 해제하면 전체 해제 delete는 체크한 것들 삭제
+                                    전부다 체크되면 첫번째 체크박스에 자동으로 체크 하나라도 안되어 있으면 체크 해제-->
+
+    </div>
+    <div id="result1">
+
+        <input type="checkbox" class="c" data-del-num="result1">
+        <span>Mail Title1</span>
+
+    </div>
+    <div id="result2">
+
+        <input type="checkbox" class="c" data-del-num="result2">
+        <span>Mail Title2</span>
+
+    </div>
+    <div id="result3">
+
+        <input type="checkbox" class="c" data-del-num="result3">
+        <span>Mail Title3</span>
+
+    </div>
+    <div id="result4">
+
+        <input type="checkbox" class="c" data-del-num="result4">
+        <span>Mail Title4</span>
+
+    </div>
+    <div id="result5">
+
+        <input type="checkbox" class="c" data-del-num="result5">
+        <span>Mail Title5</span>
+
+    </div>
+
+
+    <script>
+        const cA = document.getElementById("cA");
+        const c = document.getElementsByClassName("c"); //input
+        const del = document.getElementById("del"); //버튼
+
+        for(let i =0; i<c.length; i++){
+            c[i].addEventListener("click",function(){
+                let flag = true;
+                
+                for(let j =0; j <c.length; j++){
+                    if(!c[j].checked){
+                        flag = false;
+                    }
+                }
+                cA.checked = flag;
+            })
+
+        }
+
+        cA.addEventListener("click", function(){
+            // if(cA.checked == true){
+            //     for(let i=0; i<c.length; i++){
+            //         c[i].checked = cA.checked;
+            //     }
+            // } else{
+            //     for(let i=0; i<c.length; i++){
+            //         c[i].checked = cA.checked;
+            //     }
+            // }
+
+            for(let i=0; i<c.length; i++){
+                if(cA.checked == true){
+                    c[i].checked = cA.checked;
+                } else{
+                    c[i].checked = cA.checked;
+                }
+            }
+            
+        })
+
+        del.addEventListener("click", function(){
+            let ar=[];
+            
+
+
+            for(let i =0; i<c.length; i++){
+                if(c[i].checked == true){
+                    //document.getElementById(c[i].getAttribute("data-del-num")).remove();// 지울 때마다 length의 길이가 달라지므로
+                    //클릭된것을 ar에 넣어서 ar을 지운다.**!!!!
+                    ar.push(c[i].getAttribute("data-del-num"));
+                }
+            }
+
+            for(let i=0; i<ar.length; i++){
+                document.getElementById(ar[i]).remove(); //클릭된 친구들 push로 인해 ar에 들어가게 되고 ar을 지움
+            }
+        })
+
+
+    </script>
+
+
+
+</body>
+</html>

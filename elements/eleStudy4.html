@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="c1" id="result1" >
+
+        <h3>1</h3>
+        <button class="btn" id="1" data-del-num="1">CLICK</button>
+
+    </div>
+
+    <div class="c1" id="result2">
+
+        <h3>2</h3>
+        <button class="btn" id="2" data-del-num="2">CLICK</button>
+
+    </div>
+
+    <div class="c1" id="result3">
+
+        <h3>3</h3>
+        <button class="btn" id="3" data-del-num="3">CLICK</button>
+
+    </div>
+
+    <div class="c1" id="result4">
+
+        <h3>4</h3>
+        <button class="btn" id="4" data-del-num="4">CLICK</button>
+
+    </div>
+
+    <script>
+
+        const btn = document.getElementsByClassName("btn"); //배열이여서 event 걸리지 않음
+        const c1 = document.getElementsByClassName("c1");
+
+        for(let i =0; i<btn.length; i++){
+            
+            btn[i].addEventListener("click", function(){
+                console.log(this.getAttribute("data-del-num")); //this.data-del-num 불가
+                console.log(this.id); //this= <button class="btn" id="2">CLICK</button>
+                // document.getElementById("result" + this.id).remove();
+                document.getElementById("result" + this.getAttribute("data-del-num")).remove();
+
+                
+                
+                
+                // c1[i].remove();
+            
+                // console.log("div length: " + c1.length)
+                // console.log("btn length: " + btn.length)
+                // console.log("index: " + i);
+            })
+        }
+        
+
+    </script>
+</body>
+</html>
