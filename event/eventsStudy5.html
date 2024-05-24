@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            width: 200px;
+            height: 70px;
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="btns">Click</button>
+    <button class="btns">Click2</button>
+
+    <div id="result">
+        <button id="b">test</button>
+    </div>
+
+    <button id="add">Add</button>
+
+    <script>
+        const btns = document.getElementsByClassName("btns");
+        const add = document.getElementById("add");
+
+        const result = document.getElementById("result");
+
+        //test
+        const b = document.getElementById("b");
+
+        result.addEventListener("click", function(e){
+            console.log(e)
+            //e.target = button 실제 클릭한 것
+            
+            if(e.target.classList.contains("btns")){
+                console.log("button");
+                go();
+            }
+            
+        })
+
+
+
+        // b.addEventListener("click", function(){
+        //     console.log("button")
+        // }) //중첩된 이벤트가 있을 시, (같은 영역 내) 하위 이벤트부터 먼저 실행된 후 상위 이벤트 방향으로 실행된다.
+
+        ////
+
+        add.addEventListener("click", function(){
+            let b = document.createElement("button");
+            b.append("click");
+            b.className="btns";
+            result.append(b);
+
+        })
+
+        for(let i=0; i<btns.length;i++){
+            btns[i].addEventListener("click", function(){
+              go();
+            })
+        }
+
+        function go(){
+            console.log("같은 일을 하자")
+        }
+    </script>
+</body>
+</html>
