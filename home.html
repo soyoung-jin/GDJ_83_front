@@ -4,27 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <!-- to do list 만들기 -->
 
     <div>
-        <!-- text창에 할일을 적기 버튼을 클릭하면 등록되도록 -->
-        <!-- 체크하면 (선)line through적용하고 또 체크 해제하면 line through 해제 class 이용-->
+        <!-- text창에 할일을 적기, 버튼을 클릭하면 등록되도록 -->
+        <!-- 체크하면 (선)line through적용하고 또 체크 해제하면 line through 해제 class 이용
+        부모 영역에서 상위 div를 이용해서 event를 넘겨주어야 함-->
         <!-- 휴지통 누르면 체크된 것들 삭제하기 -->
         <!-- 집에서 숙제용-->
-        <input type="text">
-        <button>Add</button>
+        <input type="text" value="" id="box">
+        <button id="btn">Add</button>
     </div>
 
-    <div>
-        <div>
-            <button>휴지통</button>
+    <div id="div">
+        <div id="div2">
+            <button id="trash">휴지통</button>
         </div>
-        <div>
+
+
+        <!-- <div>
             <input type="checkbox">
             <span>게임하기</span>
-        </div>
+        </div> -->
+
+
     </div>
+
+    <script>
+        
+        const btn = document.getElementById("btn");
+        const div = document.getElementById("div"); // 제일 상위 div
+        const div2 = document.getElementById("div2"); //휴지통
+        const box = document.getElementById("box"); //text박스
+        const divv = document.getElementsByClassName("divv");
+        const trash = document.getElementById("trash");
+
+        btn.addEventListener("click", function(){
+            let d = document.createElement("div");
+            let i = document.createElement("input");
+            let t = document.createAttribute("type");
+            t.value = "checkbox";
+            i.setAttributeNode(t);
+            d.appendChild(i);
+            div.append(d);
+            i.classList.add("divv");
+
+            let s = document.createElement("span");
+            let input = document.createTextNode(box.value);
+            s.append(input);
+            d.append(s);
+            div.append(d);
+            
+            trash.addEventListener("click", function(e){
+                if(e.target.classList.contains("divv")){
+                    div.remove();
+                }
+        
+            })
+
+            
+            trash.addEventListener("click", function(){
+
+
+            
+                // for(let i=0; i<divv.length; i++){
+                //     divv[i].addEventListener("click", function(e){
+                //         if(e.target.classList.contains("divv")){
+                //             divv[i].remove();
+    
+                //         }
+                //     })
+                // }
+            })
+
+
+            
+            // div.addEventListener("click", )
+
+
+
+
+
+            
+
+        })
+
+
+
+    </script>
 </body>
 </html>

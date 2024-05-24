@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+    </div>
+    <button id="add">add</button>
+
+
+
+
+    <script>
+        const add = document.getElementById("add");
+        const result = document.getElementById("result")
+
+        add.addEventListener("click", function(){
+            let i = document.createElement("input");
+
+            i.type = "checkbox"
+            i.classList.add("ch");
+            result.append(i)
+        })
+
+        result.addEventListener("click", function(e){
+            
+
+            if(e.target.classList.contains("ch")){
+                // 실행할 부분을 적음
+            } //맞다면 체크박스 있는거
+
+        })
+        //element가 가지고 싶은 요소를 중단시키고 싶을 때,goole띄고 안가고 싶은거임 그때 메게변수르 ㅣ벤트 변수로 로 줌
+    </script>
+</body>
+</html>

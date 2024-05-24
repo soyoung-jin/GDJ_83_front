@@ -18,13 +18,15 @@
     <button class="btns">Click</button>
     <button class="btns">Click2</button>
 
+
     <div id="result">
-        <button id="b">test</button>
+        
     </div>
 
     <button id="add">Add</button>
 
     <script>
+        //add 눌렀을 때 click만 눌렀을 때 실행되는 코드를 만들고자 함
         const btns = document.getElementsByClassName("btns");
         const add = document.getElementById("add");
 
@@ -33,12 +35,15 @@
         //test
         const b = document.getElementById("b");
 
+        // b.addEventListener("keyup",function(){
+
+        // })
+
         result.addEventListener("click", function(e){
             console.log(e)
-            //e.target = button 실제 클릭한 것
+            //e.target = button :: 실제 클릭한 것 =document.getElement한것과 같다
             
             if(e.target.classList.contains("btns")){
-                console.log("button");
                 go();
             }
             
