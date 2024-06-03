@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" class="input">
+    <input type="file" class="input">
+    <input type="file" class="input">
+    <button id="btn">CLICK</button>
+
+    <script>
+
+        //input의 value 속성에 있음
+
+
+        
+        const i = document.getElementsByClassName("input");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function(){
+
+            for(let j =0; j <i.length; j++){
+                let v = i[j].value.indexOf(".");
+                let s = i[j].value.substring(v+1);
+
+                if(s =="jpg" || s == "jpeg" || s == "png" || s == "jiff"){
+                     console.log("이미지 파일입니다.")
+                } else {
+                    console.log("이미지 파일이 아닙니다.")
+                }
+            }
+           
+        })
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>
